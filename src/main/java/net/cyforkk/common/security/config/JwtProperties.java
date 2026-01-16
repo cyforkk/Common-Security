@@ -1,21 +1,19 @@
 package net.cyforkk.common.security.config;
 
-/**
- * ClassName: JwtProperties
- * Package: net.cyforkk.common.security.config
- * Description:
- *
- * @Author Cyforkk
- * @Create 2026/1/15 下午4:05
- * @Version 1.0
- */
+
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * JWT 配置属性类
- * 自动读取 application.yml 中以 jwt 开头的配置
+ * JWT配置属性类
+ * <p>
+ * 自动读取application.yml中以jwt为前缀的配置项。
+ * 使用{@link ConfigurationProperties}绑定属性值。
+ * </p>
+ *
+ * @author Cyforkk
+ * @version 1.0
  */
 @Data
 @ConfigurationProperties(prefix = "jwt")

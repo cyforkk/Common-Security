@@ -7,19 +7,28 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 
 /**
- * ClassName: JwtAutoConfiguration
- * Package: net.cyforkk.common.security.config
- * Description:
+ * JWT自动配置类
+ * <p>
+ * 通过Spring Boot自动配置机制自动创建{@link JwtTool} Bean。
+ * 当容器中不存在JwtTool Bean时自动配置生效。
+ * </p>
  *
- * @Author Cyforkk
- * @Create 2026/1/15 下午4:06
- * @Version 1.0
+ * @author Cyforkk
+ * @version 1.0
+ * @see JwtProperties
+ * @see JwtTool
  */
 
 @AutoConfiguration
 @EnableConfigurationProperties(JwtProperties.class)
 public class JwtAutoConfiguration {
 
+    /**
+     * 创建JWT工具Bean
+     *
+     * @param properties JWT配置属性
+     * @return 配置好的JWT工具实例
+     */
     @Bean
     @ConditionalOnMissingBean
     public JwtTool jwtTool(JwtProperties properties){
