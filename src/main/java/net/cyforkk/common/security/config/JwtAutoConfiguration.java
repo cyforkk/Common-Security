@@ -1,6 +1,6 @@
 package net.cyforkk.common.security.config;
 
-import net.cyforkk.common.security.utils.JwtTool;
+import net.cyforkk.common.security.utils.JwtUtil;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -9,14 +9,14 @@ import org.springframework.context.annotation.Bean;
 /**
  * JWT自动配置类
  * <p>
- * 通过Spring Boot自动配置机制自动创建{@link JwtTool} Bean。
+ * 通过Spring Boot自动配置机制自动创建{@link JwtUtil} Bean。
  * 当容器中不存在JwtTool Bean时自动配置生效。
  * </p>
  *
  * @author Cyforkk
  * @version 1.0
  * @see JwtProperties
- * @see JwtTool
+ * @see JwtUtil
  */
 
 @AutoConfiguration
@@ -31,7 +31,7 @@ public class JwtAutoConfiguration {
      */
     @Bean
     @ConditionalOnMissingBean
-    public JwtTool jwtTool(JwtProperties properties){
-        return new JwtTool(properties);
+    public JwtUtil JwtUtil(JwtProperties properties){
+        return new JwtUtil(properties);
     }
 }
