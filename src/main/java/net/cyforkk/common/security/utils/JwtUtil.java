@@ -126,6 +126,23 @@ public class JwtUtil {
         }
     }
 
+    /**
+     * 【基础校验】仅验证 Token 是否格式正确且未过期
+     * (这是你报错缺失的方法)
+     * * @param token JWT字符串
+     * @return boolean
+     */
+    public boolean validateToken(String token) {
+        try {
+            parseToken(token); // 如果解析失败会抛出异常
+            return true;
+        } catch (Exception e) {
+            // 记录日志，但不抛出异常给上层，直接返回 false
+            log.debug("Token格式非法或已失效: {}", e.getMessage());
+            return false;
+        }
+    }
+
     private boolean isTokenExpired(String token) {
         try {
             return extractExpiration(token).before(new Date());
