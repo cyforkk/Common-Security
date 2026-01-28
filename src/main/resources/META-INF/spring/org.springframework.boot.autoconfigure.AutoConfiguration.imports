@@ -1,1 +1,2 @@
 net.cyforkk.common.security.config.JwtAutoConfiguration
+net.cyforkk.common.security.config.CorsAutoConfiguration
