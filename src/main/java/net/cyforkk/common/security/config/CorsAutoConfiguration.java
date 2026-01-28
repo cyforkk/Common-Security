@@ -17,7 +17,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
  * </p>
  *
  * @author Cyforkk
- * @version 1.0
+ * @version 2.4
  */
 @Slf4j
 @AutoConfiguration

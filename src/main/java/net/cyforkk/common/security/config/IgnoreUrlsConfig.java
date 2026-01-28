@@ -24,7 +24,7 @@ import java.util.List;
  * </pre>
  *
  * @author Cyforkk
- * @version 1.0
+ * @version 2.4
  */
 @Data // 提供 Getter, Setter, ToString, Equals, HashCode
 @ConfigurationProperties(prefix = "security.ignored")

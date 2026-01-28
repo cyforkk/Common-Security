@@ -15,7 +15,7 @@ import java.time.Duration;
  * </p>
  *
  * @author Cyforkk
- * @version 2.3
+ * @version 2.4
  */
 @Data
 @ConfigurationProperties(prefix = "jwt")
